@@ -1,0 +1,109 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+env:
+  NODE_VERSION: '20.12'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: |
+          corepack enable
+          yarn install
+      - name: Run Lint
+        run: yarn eslint -c .eslintrc.js $(git diff --name-only --diff-filter=ACMRUXB origin/main | grep -E "(.js$|.ts$|.tsx$)")
+
+  typecheck:
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
+    strategy:
+      matrix:
+        shard: [1, 2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: |
+          corepack enable
+          yarn install
+      - name: Run Typecheck
+        run: yarn tsc --noEmit
+
+  pre-pack:
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
+    strategy:
+      matrix:
+        shard: [1, 2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: |
+          corepack enable
+          yarn install
+      - name: Build
+        run: yarn build
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [1, 2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: |
+          corepack enable
+          yarn install
+      - name: Run Tests
+        run: yarn vitest --reporter=junit > ./.junit
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ matrix.shard }}
+          path: ./.junit
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - test
+      - lint:
+          filters:
+            branches:
+              ignore: main
+      - typecheck:
+          filters:
+            branches:
+              ignore: main
+      - pre-pack:
+          filters:
+            branches:
+              ignore: main
