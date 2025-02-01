@@ -1,9 +1,18 @@
-export type BaseMetadata = {
+export interface BaseMetadata {
   title?: string;
   description?: string;
   image?: string;
   url?: string;
-};
+
+  keywords?: string[];
+  author?: string;
+  favicon?: string;
+  canonicalUrl?: string;
+  viewport?: string;
+  charset?: string;
+  themeColor?: string;
+  robots?: string;
+}
 
 export type ImageMetadata = {
   url: string;
