@@ -1,11 +1,23 @@
 {
   "compilerOptions": {
+    "types": ["vitest/globals"],
     "target": "es2016",
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    ".eslintrc.js",
+    "tsup.config.ts",
+    "packlint.config.mjs",
+    "vitest.config.mts"
+  ]
 }
