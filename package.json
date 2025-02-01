@@ -63,6 +63,9 @@
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts"
   },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  },
   "lint-staged": {
     "*.ts": [
       "eslint --fix",
