@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 import { Plugin, ScraperOptions, Metadata, BaseMetadata } from '@/types';
 import { toNormalizedText, toTruncatedText } from '@/utils';
 

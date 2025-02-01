@@ -65,7 +65,8 @@
     "types": "./dist/index.d.ts"
   },
   "dependencies": {
-    "cheerio": "^1.0.0"
+    "cheerio": "^1.0.0",
+    "node-fetch": "^3.3.2"
   },
   "lint-staged": {
     "*.ts": [
