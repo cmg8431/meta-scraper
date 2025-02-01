@@ -18,6 +18,7 @@
     ".eslintrc.js",
     "tsup.config.ts",
     "packlint.config.mjs",
-    "vitest.config.mts"
+    "vitest.config.mts",
+    "test.ts"
   ]
 }

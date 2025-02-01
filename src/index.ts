@@ -1,1 +1,3 @@
-export default (a: number, b: number) => a + b;
+export { createScraper } from './core';
+export { jsonLd } from './plugins';
+export type { Metadata, ScraperOptions } from './types';
