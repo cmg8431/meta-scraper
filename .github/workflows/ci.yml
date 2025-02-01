@@ -89,21 +89,3 @@ jobs:
         with:
           name: test-results-${{ matrix.shard }}
           path: ./.junit
-
-workflows:
-  version: 2
-  main:
-    jobs:
-      - test
-      - lint:
-          filters:
-            branches:
-              ignore: main
-      - typecheck:
-          filters:
-            branches:
-              ignore: main
-      - pre-pack:
-          filters:
-            branches:
-              ignore: main
