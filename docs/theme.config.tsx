@@ -6,9 +6,9 @@ import { useConfig } from 'nextra-theme-docs';
 
 const config: DocsThemeConfig = {
   project: {
-    link: 'https://github.com/cmg8431/meta-scraper',
+    link: 'https://github.com/cmg8431/web-meta-scraper',
   },
-  docsRepositoryBase: 'https://github.com/cmg8431/meta-scraper/tree/main/docs',
+  docsRepositoryBase: 'https://github.com/cmg8431/web-meta-scraper/tree/main/docs',
   useNextSeoProps() {
     const { asPath } = useRouter();
     if (asPath !== '/') {
@@ -92,7 +92,7 @@ const config: DocsThemeConfig = {
             </a>
           </div>
           <p className="mt-6 text-xs">
-            © {new Date().getFullYear()} The Meta-scraper Project.
+            © {new Date().getFullYear()} The Web-Meta-scraper Project.
           </p>
         </div>
       );

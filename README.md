@@ -6,23 +6,23 @@ English | [한국어](https://github.com/cmg8431/meta-scraper/blob/main/README-k
 A TypeScript library for extracting various types of web page metadata (including JSON-LD, Open Graph, meta tags, and more) that works across Node.js, browsers, pnpm, and bun environments.
 
 ## Installation
-To install `meta-scraper`, you can use npm, yarn, pnpm, or bun:
+To install `web-meta-scraper`, you can use npm, yarn, pnpm, or bun:
 
 ```bash
-npm install meta-scraper
+npm install web-meta-scraper
 # or
-yarn add meta-scraper
+yarn add web-meta-scraper
 # or
-pnpm add meta-scraper
+pnpm add web-meta-scraper
 # or
-bun add meta-scraper
+bun add web-meta-scraper
 ```
 
 ## Usage
-`meta-scraper` allows you to easily extract metadata from web pages, such as JSON-LD, Open Graph, and meta tags. It also supports custom parsing and flexible fetching options.
+`web-meta-scraper` allows you to easily extract metadata from web pages, such as JSON-LD, Open Graph, and meta tags. It also supports custom parsing and flexible fetching options.
 
 ```typescript
-import { createScraper, jsonLd, openGraph } from 'meta-scraper';
+import { createScraper, jsonLd, openGraph } from 'web-meta-scraper';
 
 const scrape = createScraper([jsonLd, openGraph]);
 const metadata = await scrape('https://www.example.com', {
