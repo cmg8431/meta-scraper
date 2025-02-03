@@ -641,31 +641,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cmg8431/meta-scraper@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@cmg8431/meta-scraper@workspace:."
-  dependencies:
-    "@changesets/cli": "npm:^2.27.12"
-    "@types/jest": "npm:^29.5.3"
-    "@typescript-eslint/eslint-plugin": "npm:^6.1.0"
-    "@typescript-eslint/parser": "npm:^6.1.0"
-    cheerio: "npm:^1.0.0"
-    eslint: "npm:^8.45.0"
-    eslint-config-prettier: "npm:^8.8.0"
-    eslint-plugin-import: "npm:^2.27.5"
-    eslint-plugin-prettier: "npm:^5.0.0"
-    husky: "npm:^8.0.3"
-    jest: "npm:^29.6.1"
-    lint-staged: "npm:^13.2.3"
-    node-fetch: "npm:^3.3.2"
-    prettier: "npm:^3.0.0"
-    ts-jest: "npm:^29.1.1"
-    tsup: "npm:^8.0.2"
-    typescript: "npm:^5.4.3"
-    vitest: "npm:^1.4.0"
-  languageName: unknown
-  linkType: soft
-
 "@esbuild/aix-ppc64@npm:0.21.5":
   version: 0.21.5
   resolution: "@esbuild/aix-ppc64@npm:0.21.5"
@@ -11988,6 +11963,31 @@ __metadata:
   checksum: 10c0/a17e037bccd3ca8a25a80cb850903facdfed0de4864bd8728f1782370715d679fa72e0a0f5da7c1c1379365159901e5935f35be531229da53bbfc0efdabdb48e
   languageName: node
   linkType: hard
+
+"web-meta-scraper@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "web-meta-scraper@workspace:."
+  dependencies:
+    "@changesets/cli": "npm:^2.27.12"
+    "@types/jest": "npm:^29.5.3"
+    "@typescript-eslint/eslint-plugin": "npm:^6.1.0"
+    "@typescript-eslint/parser": "npm:^6.1.0"
+    cheerio: "npm:^1.0.0"
+    eslint: "npm:^8.45.0"
+    eslint-config-prettier: "npm:^8.8.0"
+    eslint-plugin-import: "npm:^2.27.5"
+    eslint-plugin-prettier: "npm:^5.0.0"
+    husky: "npm:^8.0.3"
+    jest: "npm:^29.6.1"
+    lint-staged: "npm:^13.2.3"
+    node-fetch: "npm:^3.3.2"
+    prettier: "npm:^3.0.0"
+    ts-jest: "npm:^29.1.1"
+    tsup: "npm:^8.0.2"
+    typescript: "npm:^5.4.3"
+    vitest: "npm:^1.4.0"
+  languageName: unknown
+  linkType: soft
 
 "web-namespaces@npm:^2.0.0":
   version: 2.0.1
