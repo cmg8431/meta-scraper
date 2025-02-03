@@ -6,7 +6,7 @@ on:
 
 jobs:
   release:
-    if: github.repository == 'cmg8431/meta-scraper'
+    if: github.repository == 'cmg8431/web-meta-scraper'
 
     runs-on: ubuntu-latest
 
