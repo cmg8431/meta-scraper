@@ -1,10 +1,36 @@
 {
-  "name": "@cmg8431/meta-scraper",
+  "name": "web-meta-scraper",
   "version": "0.1.1",
-  "repository": "https://github.com/cmg8431/meta-scraper.git",
+  "description": "A URL scraper for extracting various metadata, including Open Graph, JSON-LD, and more",
+  "keywords": [
+    "meta-scraper",
+    "meta-tags",
+    "web-scraping",
+    "metadata",
+    "seo",
+    "open-graph",
+    "twitter-cards",
+    "typescript",
+    "cheerio"
+  ],
   "author": "cmg8431 <cmg8431@gmail.com>",
   "license": "MIT",
+  "repository": "https://github.com/cmg8431/web-meta-scraper.git",
   "type": "commonjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/*"
+  ],
   "workspaces": [
     ".",
     "docs"
@@ -19,15 +45,10 @@
     "docs:build": "yarn workspace docs build",
     "docs:start": "yarn workspace docs start"
   },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    },
-    "./package.json": "./package.json"
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "node-fetch": "^3.3.2"
   },
-  "main": "./dist/index.js",
   "devDependencies": {
     "@changesets/cli": "^2.27.12",
     "@types/jest": "^29.5.3",
@@ -46,9 +67,12 @@
     "typescript": "^5.4.3",
     "vitest": "^1.4.0"
   },
-  "files": [
-    "dist/*"
-  ],
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "publishConfig": {
     "access": "public",
     "exports": {
@@ -63,16 +87,6 @@
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts"
-  },
-  "dependencies": {
-    "cheerio": "^1.0.0",
-    "node-fetch": "^3.3.2"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "prettier --write"
-    ]
   },
   "packageManager": "yarn@4.6.0"
 }
